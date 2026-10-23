@@ -44,7 +44,7 @@ Importar este repositorio con **Root Directory: raíz del repositorio**. `vercel
 - Build: `npm run build`.
 - Output Directory: `dist`.
 
-La portada queda en `/`, y las fichas en `/alba/` y `/bruma/`. Subir el código a GitHub no equivale a publicar la web: se debe completar y verificar el despliegue de Vercel para obtener el enlace de revisión.
+La portada queda en `/`, y las fichas en `/alba/` y `/bruma/`. Se fuerza la barra final en esas rutas para mantener correctas las rutas relativas de modelos, mapas y estilos. Subir el código a GitHub no equivale a publicar la web: se debe completar y verificar el despliegue de Vercel para obtener el enlace de revisión.
 
 ## Estructura
 
