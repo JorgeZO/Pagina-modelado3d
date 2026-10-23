@@ -1,0 +1,33 @@
+{
+  "name": "Escudo de la Bruma",
+  "triangles": 5760,
+  "vertices": 11294,
+  "materials": 4,
+  "drawCalls": 4,
+  "textureResolution": 512,
+  "textureCount": 12,
+  "bytes": 1469128,
+  "dimensionsMeters": {
+    "width": 0.966,
+    "height": 0.966
+  },
+  "parts": {
+    "Madera": {
+      "triangles": 1152,
+      "vertices": 2252
+    },
+    "Acero": {
+      "triangles": 1832,
+      "vertices": 3670
+    },
+    "Bronce": {
+      "triangles": 2552,
+      "vertices": 4924
+    },
+    "Cuero": {
+      "triangles": 224,
+      "vertices": 448
+    }
+  },
+  "sha256": "fe5c898d157e1b822ae459291671030fa9a012854068cf204405bff6af1713c5"
+}

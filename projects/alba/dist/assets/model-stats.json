@@ -1,0 +1,33 @@
+{
+  "name": "Escudo del Alba",
+  "triangles": 4586,
+  "vertices": 9981,
+  "materials": 4,
+  "drawCalls": 4,
+  "textureResolution": 512,
+  "textureCount": 12,
+  "bytes": 1518884,
+  "dimensionsMeters": {
+    "width": 0.76,
+    "height": 1.12
+  },
+  "parts": {
+    "Madera": {
+      "triangles": 602,
+      "vertices": 1511
+    },
+    "Acero": {
+      "triangles": 1322,
+      "vertices": 3079
+    },
+    "Bronce": {
+      "triangles": 2406,
+      "vertices": 4879
+    },
+    "Cuero": {
+      "triangles": 256,
+      "vertices": 512
+    }
+  },
+  "sha256": "e28a5cf97ea8c745d7c48da8831c3eafbe6097c6c9976a9f83e348ce8f20286b"
+}

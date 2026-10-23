@@ -1,0 +1,8 @@
+CC0 1.0 Universal
+
+The original shield geometry, procedural textures, website design and original
+source code of Escudo de la Bruma are dedicated to the public domain under CC0 1.0.
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Google model-viewer is third-party software licensed under Apache 2.0.
+Its license is preserved at dist/vendor/LICENSE-model-viewer.txt.

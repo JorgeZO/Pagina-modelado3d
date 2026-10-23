@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ede4ce">
+  <meta name="description" content="Ficha interactiva del Escudo del Alba. Explora el modelo medieval en 3D y cambia sus acabados de madera, acero y bronce.">
+  <title>Escudo del Alba · Cuaderno de armería</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%2377382c' d='M10 8h44v20c0 16-22 30-22 30S10 44 10 28Z'/%3E%3Cpath fill='none' stroke='%23ede4ce' stroke-width='3' d='M32 17v28M18 29h28'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="vendor/model-viewer.min.js"></script><script type="module" src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#pieza">Saltar al escudo</a>
+<div class="folio">
+  <header class="book-header"><span>CUADERNO DE ARMERÍA</span><svg viewBox="0 0 70 30" aria-hidden="true"><path d="M1 15h20m28 0h20M25 5h20v9c0 8-10 13-10 13s-10-5-10-13Z"/><path d="M35 9v13m-5-8h10"/></svg><span>LÁMINA N.º 01</span></header>
+  <main>
+    <div class="title-block"><p class="rubric">Estudio de un escudo medieval</p><h1>Escudo del Alba</h1><p class="subtitle">Escudo de punta con emblema solar.</p><div class="title-ornament" aria-hidden="true"><span></span>✧<span></span></div></div>
+    <section class="plate" id="pieza" aria-label="Lámina interactiva del Escudo del Alba">
+      <aside class="margin-note note-left"><span class="annotation-number">I.</span><h2>El cuerpo</h2><p>Roble curvado.<br>Vetas a lo largo<br>de la pieza.</p><span class="note-line" aria-hidden="true"></span><span class="note-dimension">112 cm<br><small>de altura</small></span></aside>
+      <div class="model-mount">
+        <model-viewer id="shield" src="assets/escudo-del-alba.glb" alt="Escudo de punta con cuerpo de madera, borde de acero, sol de bronce y dos correas de cuero en el reverso. Arrastra para girarlo."
+          camera-controls touch-action="pan-y" camera-orbit="-18deg 82deg 2.6m" camera-target="0m -0.015m 0m" field-of-view="33deg" min-camera-orbit="auto 15deg 1.35m" max-camera-orbit="auto 165deg 3.5m"
+          shadow-intensity=".9" shadow-softness=".8" exposure="1.05" environment-image="neutral" interaction-prompt="none" loading="eager">
+          <div class="loading" slot="progress-bar" id="loading"><span>Cargando la pieza…</span><div class="progress-track"><span id="progress"></span></div></div>
+          <div class="error-message" id="model-error" hidden>No se pudo abrir el modelo. <a href="assets/escudo-del-alba.glb" download>Descargar el GLB</a>.</div>
+        </model-viewer>
+      </div>
+      <aside class="margin-note note-right"><span class="annotation-number">II.</span><h2>El emblema</h2><p>Sol de bronce.<br>Umbo de acero.<br>Ocho rayos.</p><span class="note-line" aria-hidden="true"></span><span class="note-dimension">76 cm<br><small>de anchura</small></span></aside>
+      <p class="plate-caption">Figura 1. &nbsp; Arrastra el escudo para observarlo; usa la rueda o dos dedos para acercarte.</p>
+    </section>
+    <nav class="view-tools" aria-label="Vistas del escudo"><span>Ver la pieza</span><button id="front" disabled>De frente</button><button id="back" disabled>Por detrás</button><button id="rotate" aria-label="Activar giro automático" aria-pressed="false" disabled>Giro automático</button></nav>
+    <section class="finishes" aria-labelledby="finish-title">
+      <div class="section-heading"><span aria-hidden="true">❧</span><h2 id="finish-title">Pruebas de acabado</h2><p>Elige un material para alternar su apariencia.</p></div>
+      <div class="finish-row">
+        <button class="finish" id="wood" aria-pressed="false" disabled><span class="swatch wood" aria-hidden="true"></span><span class="finish-copy"><span class="material-name">I. Madera</span><span class="material-value" id="wood-value">Roble natural</span><span class="action" id="wood-action">Cambiar a nogal oscuro →</span></span></button>
+        <button class="finish" id="steel" aria-pressed="false" disabled><span class="swatch steel" aria-hidden="true"></span><span class="finish-copy"><span class="material-name">II. Acero</span><span class="material-value" id="steel-value">Forjado claro</span><span class="action" id="steel-action">Aplicar pavonado →</span></span></button>
+        <button class="finish" id="bronze" aria-pressed="true" disabled><span class="swatch bronze" aria-hidden="true"></span><span class="finish-copy"><span class="material-name">III. Bronce</span><span class="material-value" id="bronze-value">Relieve grabado</span><span class="action" id="bronze-action">Quitar el grabado →</span></span></button>
+      </div>
+      <div class="finish-foot"><span id="edit-note" role="status" aria-live="polite">Preparando materiales…</span><button id="reset" disabled>Volver al acabado original</button></div>
+    </section>
+    <section class="record" aria-labelledby="record-title">
+      <div class="record-text"><p class="rubric">Notas de construcción</p><h2 id="record-title">La forma y su detalle</h2><p>La silueta de punta, el borde biselado y el emblema están modelados. Las vetas de madera y los grabados finos se leen en la superficie gracias a los mapas PBR. Al girarlo aparecen dos correas de cuero.</p><p class="disclaimer">Diseño original de inspiración medieval; modelo digital de estudio.</p></div>
+      <dl class="record-data"><div><dt>Geometría</dt><dd>4.586 triángulos</dd></div><div><dt>Materiales</dt><dd>Roble, acero, bronce y cuero</dd></div><div><dt>Mapas PBR</dt><dd>512 × 512 px</dd></div><div><dt>Archivo GLB</dt><dd id="size">1,45 MiB</dd></div></dl>
+    </section>
+    <details class="technical"><summary>Consultar UV y texturizado <span aria-hidden="true">+</span></summary><div class="technical-content"><p>UV en todas las piezas: proyección planar en el cuerpo, radial en el emblema y reutilización en remaches. Se incluyen Base Color, Roughness, Metallic y Normal; Roughness y Metallic comparten una textura en los canales G y B del GLB.</p><p>La madera cambia de textura, el acero cambia su factor de color y el bronce permite activar o quitar el normal map. Implementado con la <a href="https://modelviewer.dev/examples/scenegraph/" target="_blank" rel="noopener">API de materiales de Google model-viewer</a>.</p></div></details>
+  </main>
+  <footer class="colophon"><span>FIN DE LA LÁMINA · 01</span><div><a href="assets/escudo-del-alba.glb" download>Descargar escudo .glb</a><a href="proyecto-escudo.zip" download>Archivos del proyecto .zip</a></div></footer>
+</div>
+<noscript><p class="noscript">Activa JavaScript para explorar la pieza o <a href="assets/escudo-del-alba.glb" download>descarga el GLB</a>.</p></noscript>
+</body>
+</html>

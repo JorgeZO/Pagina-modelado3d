@@ -1,0 +1,381 @@
+{
+  "bytes": 1469128,
+  "sha256": "fe5c898d157e1b822ae459291671030fa9a012854068cf204405bff6af1713c5",
+  "materialCount": 4,
+  "materials": [
+    "Madera",
+    "Acero",
+    "Bronce",
+    "Cuero"
+  ],
+  "triangles": 5760,
+  "primitives": [
+    {
+      "material": "Madera",
+      "triangles": 1152,
+      "hasUVs": true,
+      "uvRange": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "collapsedUVTriangles": 0,
+      "collapsedUVSurfacePercent": 0.0,
+      "uvFinite": true
+    },
+    {
+      "material": "Acero",
+      "triangles": 1832,
+      "hasUVs": true,
+      "uvRange": [
+        [
+          -0.0031250000465661287,
+          -0.0031250000465661287
+        ],
+        [
+          1.0031249523162842,
+          1.0031249523162842
+        ]
+      ],
+      "collapsedUVTriangles": 0,
+      "collapsedUVSurfacePercent": 0.0,
+      "uvFinite": true
+    },
+    {
+      "material": "Bronce",
+      "triangles": 2552,
+      "hasUVs": true,
+      "uvRange": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "collapsedUVTriangles": 0,
+      "collapsedUVSurfacePercent": 0.0,
+      "uvFinite": true
+    },
+    {
+      "material": "Cuero",
+      "triangles": 224,
+      "hasUVs": true,
+      "uvRange": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "collapsedUVTriangles": 0,
+      "collapsedUVSurfacePercent": 0.0,
+      "uvFinite": true
+    }
+  ],
+  "embeddedMaps": [
+    {
+      "name": "Madera_basecolor",
+      "size": [
+        512,
+        512
+      ],
+      "format": "JPEG"
+    },
+    {
+      "name": "Madera_metallic-roughness",
+      "size": [
+        512,
+        512
+      ],
+      "format": "PNG"
+    },
+    {
+      "name": "Madera_normal",
+      "size": [
+        512,
+        512
+      ],
+      "format": "PNG"
+    },
+    {
+      "name": "Acero_basecolor",
+      "size": [
+        512,
+        512
+      ],
+      "format": "JPEG"
+    },
+    {
+      "name": "Acero_metallic-roughness",
+      "size": [
+        512,
+        512
+      ],
+      "format": "PNG"
+    },
+    {
+      "name": "Acero_normal",
+      "size": [
+        512,
+        512
+      ],
+      "format": "PNG"
+    },
+    {
+      "name": "Bronce_basecolor",
+      "size": [
+        512,
+        512
+      ],
+      "format": "JPEG"
+    },
+    {
+      "name": "Bronce_metallic-roughness",
+      "size": [
+        512,
+        512
+      ],
+      "format": "PNG"
+    },
+    {
+      "name": "Bronce_normal",
+      "size": [
+        512,
+        512
+      ],
+      "format": "PNG"
+    },
+    {
+      "name": "Cuero_basecolor",
+      "size": [
+        512,
+        512
+      ],
+      "format": "JPEG"
+    },
+    {
+      "name": "Cuero_metallic-roughness",
+      "size": [
+        512,
+        512
+      ],
+      "format": "PNG"
+    },
+    {
+      "name": "Cuero_normal",
+      "size": [
+        512,
+        512
+      ],
+      "format": "PNG"
+    }
+  ],
+  "sourceMaps": {
+    "Acero": {
+      "basecolor.jpg": [
+        512,
+        512
+      ],
+      "height.png": [
+        512,
+        512
+      ],
+      "metallic-roughness.png": [
+        512,
+        512
+      ],
+      "metallic.png": [
+        512,
+        512
+      ],
+      "normal.png": [
+        512,
+        512
+      ],
+      "roughness.png": [
+        512,
+        512
+      ]
+    },
+    "Bronce": {
+      "basecolor.jpg": [
+        512,
+        512
+      ],
+      "height.png": [
+        512,
+        512
+      ],
+      "metallic-roughness.png": [
+        512,
+        512
+      ],
+      "metallic.png": [
+        512,
+        512
+      ],
+      "normal.png": [
+        512,
+        512
+      ],
+      "roughness.png": [
+        512,
+        512
+      ]
+    },
+    "Cuero": {
+      "basecolor.jpg": [
+        512,
+        512
+      ],
+      "height.png": [
+        512,
+        512
+      ],
+      "metallic-roughness.png": [
+        512,
+        512
+      ],
+      "metallic.png": [
+        512,
+        512
+      ],
+      "normal.png": [
+        512,
+        512
+      ],
+      "roughness.png": [
+        512,
+        512
+      ]
+    },
+    "Fresno": {
+      "basecolor.jpg": [
+        512,
+        512
+      ],
+      "height.png": [
+        512,
+        512
+      ],
+      "metallic-roughness.png": [
+        512,
+        512
+      ],
+      "metallic.png": [
+        512,
+        512
+      ],
+      "normal.png": [
+        512,
+        512
+      ],
+      "roughness.png": [
+        512,
+        512
+      ]
+    },
+    "Madera": {
+      "basecolor.jpg": [
+        512,
+        512
+      ],
+      "height.png": [
+        512,
+        512
+      ],
+      "metallic-roughness.png": [
+        512,
+        512
+      ],
+      "metallic.png": [
+        512,
+        512
+      ],
+      "normal.png": [
+        512,
+        512
+      ],
+      "roughness.png": [
+        512,
+        512
+      ]
+    }
+  },
+  "reviewDate": "2026-10-22",
+  "pbrVerification": [
+    {
+      "material": "Madera",
+      "baseColor": true,
+      "roughness": true,
+      "metallic": true,
+      "normal": true,
+      "resolution": [
+        512,
+        512
+      ],
+      "packedChannelsVerified": true
+    },
+    {
+      "material": "Acero",
+      "baseColor": true,
+      "roughness": true,
+      "metallic": true,
+      "normal": true,
+      "resolution": [
+        512,
+        512
+      ],
+      "packedChannelsVerified": true
+    },
+    {
+      "material": "Bronce",
+      "baseColor": true,
+      "roughness": true,
+      "metallic": true,
+      "normal": true,
+      "resolution": [
+        512,
+        512
+      ],
+      "packedChannelsVerified": true
+    },
+    {
+      "material": "Cuero",
+      "baseColor": true,
+      "roughness": true,
+      "metallic": true,
+      "normal": true,
+      "resolution": [
+        512,
+        512
+      ],
+      "packedChannelsVerified": true
+    }
+  ],
+  "gltfValidation": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "browserChecks": {
+    "modelLoads": true,
+    "woodTextureToggle": true,
+    "steelColorToggle": true,
+    "bronzeNormalToggle": true,
+    "reset": true,
+    "rearView": true,
+    "consoleErrors": 0
+  },
+  "publication": "Integrated into JorgeZO/Pagina-modelado3d; web deployment on Vercel not yet verified."
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#222524">
+  <meta name="description" content="Mesa de inspección del Escudo de la Bruma. Modelo circular con cuarteles azules, materiales PBR y controles de acabado en tiempo real.">
+  <title>Bruma / Mesa de inspección 3D</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='27' fill='%23dc945c'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23222524'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="vendor/model-viewer.min.js"></script><script type="module" src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#pieza">Ir al visor del escudo</a>
+<header class="app-header"><div class="identity"><span class="identity-mark" aria-hidden="true"><span></span></span><div><h1>BRUMA</h1><p>Escudo circular / Proyecto 02</p></div></div><span class="header-description">MESA DE INSPECCIÓN 3D</span><a class="export" href="assets/escudo-de-la-bruma.glb" download><span aria-hidden="true">↓</span> Descargar GLB</a></header>
+<main>
+  <div class="workspace">
+    <section class="viewport-wrap" aria-label="Visor del Escudo de la Bruma">
+      <div class="viewport-toolbar"><span class="file-name"><span class="file-mark" aria-hidden="true"></span>escudo-de-la-bruma.glb</span><nav class="view-tools" aria-label="Vistas del escudo"><button id="front" disabled>Frente</button><button id="back" disabled>Reverso</button><button id="rotate" aria-label="Activar giro automático" aria-pressed="false" disabled>Girar <span aria-hidden="true">↻</span></button></nav></div>
+      <div class="viewport" id="pieza">
+        <div class="viewport-label"><span>VISTA LIBRE</span><span>ILUMINACIÓN NEUTRAL</span></div>
+        <div class="measure" aria-hidden="true"><span></span><small>Ø 966 mm</small><span></span></div>
+        <model-viewer id="shield" src="assets/escudo-de-la-bruma.glb" alt="Escudo circular de fresno con dos cuarteles azules, umbo y aro de acero, cenefa de bronce y dos correas de cuero. Arrastra para inspeccionarlo."
+          camera-controls touch-action="pan-y" camera-orbit="-16deg 84deg 2.6m" camera-target="0m 0m 0m" field-of-view="33deg" min-camera-orbit="auto 15deg 1.35m" max-camera-orbit="auto 165deg 4m"
+          shadow-intensity="1" shadow-softness=".8" exposure="1.1" environment-image="neutral" interaction-prompt="none" loading="eager">
+          <div class="loading" slot="progress-bar" id="loading"><span>CARGANDO GEOMETRÍA Y MAPAS</span><div class="progress-track"><span id="progress"></span></div></div>
+          <div class="error-message" id="model-error" hidden>No se pudo cargar la pieza. <a href="assets/escudo-de-la-bruma.glb" download>Descarga el modelo</a> o recarga la página.</div>
+        </model-viewer>
+        <div class="axes" aria-hidden="true"><svg viewBox="0 0 65 65"><path class="axis-y" d="M17 46V8m-3 5 3-5 3 5"/><path class="axis-x" d="M17 46h40m-5-3 5 3-5 3"/><path class="axis-z" d="m17 46-11 12"/><text x="24" y="12">Y</text><text x="55" y="38">X</text><text x="4" y="43">Z</text></svg></div>
+        <span class="viewport-number" aria-hidden="true">02 / BRUMA</span>
+      </div>
+      <div class="viewport-status"><span>ARRASTRAR: girar <span class="separator">/</span> RUEDA O PELLIZCO: zoom</span><span>5.760 TRIÁNGULOS</span></div>
+    </section>
+    <aside class="inspector" aria-labelledby="materials-title">
+      <div class="panel-title"><h2 id="materials-title">Acabados</h2><span>03</span></div>
+      <p class="panel-help">Pulsa un material para cambiarlo.<br> Los tres acabados se pueden combinar.</p>
+      <div class="material-list">
+        <button class="material" id="wood" aria-pressed="false" disabled><span class="material-top"><span>01 / MADERA</span><span class="change-icon" aria-hidden="true">⇄</span></span><span class="material-bottom"><span class="swatch wood" aria-hidden="true"></span><span><span class="material-value" id="wood-value">Cuarteles azules</span><span class="material-action" id="wood-action">Usar fresno natural</span></span></span></button>
+        <button class="material" id="steel" aria-pressed="false" disabled><span class="material-top"><span>02 / ACERO</span><span class="change-icon" aria-hidden="true">⇄</span></span><span class="material-bottom"><span class="swatch steel" aria-hidden="true"></span><span><span class="material-value" id="steel-value">Acero satinado</span><span class="material-action" id="steel-action">Aplicar pavonado</span></span></span></button>
+        <button class="material" id="bronze" aria-pressed="true" disabled><span class="material-top"><span>03 / BRONCE</span><span class="change-icon" aria-hidden="true">⇄</span></span><span class="material-bottom"><span class="swatch bronze" aria-hidden="true"></span><span><span class="material-value" id="bronze-value">Cenefa grabada</span><span class="material-action" id="bronze-action">Desactivar normal map</span></span></span></button>
+      </div>
+      <button class="reset" id="reset" disabled><span aria-hidden="true">↶</span> Restablecer pieza y cámara</button>
+      <p class="edit-note" id="edit-note" role="status" aria-live="polite">Preparando materiales…</p>
+      <div class="file-data"><h3>Datos del objeto</h3><dl><div><dt>Diámetro</dt><dd>96,6 cm</dd></div><div><dt>Texturas</dt><dd>512 × 512 px</dd></div><div><dt>Materiales</dt><dd>4 / PBR</dd></div><div><dt>Peso GLB</dt><dd id="size">1,40 MiB</dd></div></dl></div>
+      <a class="source-download" href="proyecto-escudo-bruma.zip" download>Código, texturas y memoria <span aria-hidden="true">↗</span></a>
+    </aside>
+  </div>
+  <section class="notes" aria-labelledby="notes-title"><div><span class="notes-label">SOBRE LA PIEZA</span><h2 id="notes-title">Escudo de la Bruma</h2><p>Cuerpo convexo de fresno, cuarteles pintados de azul y un umbo de acero. La cenefa entrelazada es de bronce. El reverso conserva la madera natural y dos correas de cuero.</p></div><details><summary>Cómo está construido <span aria-hidden="true">+</span></summary><p>5.760 triángulos en cuatro primitivas. La forma, el canto y los biseles se modelan; las vetas, la pintura gastada y el grabado se resuelven con texturas PBR a 512 px.</p><p>UV en todas las caras. Base Color, Roughness, Metallic y Normal incluidos en el GLB. El acabado de fresno natural carga un segundo juego de mapas al solicitarlo.</p><p>Modelo original de inspiración medieval; no representa una reconstrucción histórica exacta. Los controles usan la <a href="https://modelviewer.dev/examples/scenegraph/" target="_blank" rel="noopener">API de materiales de model-viewer</a>.</p></details></section>
+</main>
+<footer><span>PROYECTO 02 <span class="separator">/</span> MODELADO Y TEXTURIZADO PBR</span><a href="assets/escudo-de-la-bruma.glb" download>GLB original</a></footer>
+<noscript><p class="noscript">Activa JavaScript para usar el visor o <a href="assets/escudo-de-la-bruma.glb" download>descarga el GLB</a>.</p></noscript>
+</body>
+</html>
