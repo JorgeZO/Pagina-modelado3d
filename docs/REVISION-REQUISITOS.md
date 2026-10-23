@@ -1,55 +1,47 @@
-# Revisión de requisitos — Alba y Bruma
+# Revisión de requisitos — Escudo del Alba
 
-Revisión del 22 de octubre de 2026, sobre los archivos actuales, integrados en este repositorio. **Los puntos 1 a 5 están cubiertos. El punto 6 queda pendiente para la entrega final.**
+Revisión del 22 de octubre de 2026 sobre el escudo seleccionado para la entrega. **Los puntos 1 a 5 están cubiertos. El punto 6 queda pendiente.**
 
-| Requisito | Escudo del Alba | Escudo de la Bruma | Evidencia |
-|---|---|---|---|
-| 1. Objeto medieval con carga baja/media | 4.586 triángulos; silueta de punta y emblema solar | 5.760 triángulos; cuerpo circular, umbo y cenefa | Conteo directamente del GLB y revisión visual |
-| Mínimo tres materiales | 4: madera, acero, bronce, cuero | 4: madera, acero, bronce, cuero | Materiales asignados a cuatro primitivas del GLB |
-| 2. UV en todas las piezas | Sí; 0 triángulos con UV de área nula tras la corrección | Sí; 0 triángulos con UV de área nula tras la corrección | `source/revision-requisitos.json` y `source/uv-layout.png` |
-| 3. PBR a 1K o 512 px | Base Color, Roughness, Metallic y Normal, todos a 512 × 512 px | Mismos cuatro tipos de mapa a 512 × 512 px; segundo juego de fresno natural | Se comprobaron mapas fuente e imágenes integradas |
-| 4. Exportación GLB | glTF 2.0 binario, 1.518.884 bytes / 1,45 MiB | glTF 2.0 binario, 1.469.128 bytes / 1,40 MiB | Validación Khronos: 0 errores y 0 advertencias en ambos |
-| 5. HTML con Google model-viewer | Componente real, servido desde `vendor/` | Componente real, servido desde `vendor/` | HTML, carga efectiva del modelo y documentación oficial |
-| Tres botones que cambian el aspecto | Textura roble/nogal; acero claro/pavonado; normal map del bronce activado/desactivado | Juego PBR azul/fresno; acero satinado/pavonado; normal map del bronce activado/desactivado | Los seis controles se probaron en el navegador local, sin errores de consola |
-| 6. Publicación y enlace de revisión | **Pendiente para esta versión** | **Pendiente** | Repositorio recibido; falta completar y verificar la publicación web en Vercel |
+| Requisito | Resultado | Evidencia |
+|---|---|---|
+| 1. Objeto medieval con carga baja/media | Escudo de punta con emblema solar, 4.586 triángulos | Conteo del GLB y revisión visual |
+| Mínimo tres materiales | 4: madera, acero, bronce y cuero | Cuatro materiales/primitivas en el GLB |
+| 2. UV en todas las piezas | Todas las caras tienen UV; 0 triángulos con área UV nula | `projects/alba/source/revision-requisitos.json` y `uv-layout.png` |
+| 3. PBR a 1K o 512 px | Base Color, Roughness, Metallic y Normal a 512 × 512 px | Mapas fuente e imágenes integradas |
+| 4. Exportación GLB | glTF 2.0 binario, 1.518.884 bytes / 1,45 MiB | Khronos: 0 errores y 0 advertencias |
+| 5. HTML con Google model-viewer | Componente real y servido desde `vendor/` | HTML y carga efectiva del modelo |
+| Tres botones que cambian la apariencia | Textura roble/nogal, acero claro/pavonado, normal map del bronce activado/desactivado | Pruebas en navegador, sin errores de JavaScript |
+| 6. Publicación y enlace de revisión | **Pendiente** | Código preparado en GitHub; falta verificar el despliegue en Vercel |
 
-## Corrección realizada en esta revisión
+## UV y mapas
 
-La revisión detectó coordenadas UV presentes pero colapsadas en algunas caras de cantos, paredes de aros y pequeñas piezas. El validador estándar de glTF no denunciaba ese problema. Se corrigió la proyección de esas caras en ambos generadores, se regeneraron los GLB y se comprobó que ahora **todas las caras tienen área UV distinta de cero**.
+Las caras verticales de cantos, aros y correas usan proyección local en el plano de cada cara. Se comprobó que todas tienen área UV distinta de cero. Las piezas repetidas reutilizan deliberadamente el dominio de cada material.
 
-No cambian el número de triángulos ni las siluetas. Las nuevas costuras UV modifican el número de vértices exportados: Alba tiene 9.981 y Bruma, 11.294. Se actualizaron estadísticas, memorias, vistas UV y ZIP. Se conserva el diseño de las páginas.
+Roughness y Metallic se entregan como mapas individuales. En el GLB comparten una textura: Roughness ocupa G y Metallic, B. Se verificó la coincidencia de esos canales con los mapas individuales. Madera y cuero tienen Metallic = 0; acero y bronce, Metallic = 1.
 
-Los materiales tienen dominios separados, con reutilización deliberada en remaches y otras piezas repetidas. No se requiere un atlas global sin solapamientos ni un segundo UV de lightmap para este flujo.
-
-## Mapas y flujo de trabajo
-
-Roughness y Metallic también se entregan como mapas individuales. En el GLB comparten un mapa: Roughness ocupa G y Metallic, B. Se verificó que esos canales coinciden con sus mapas individuales. Madera y cuero tienen Metallic = 0; acero y bronce, Metallic = 1.
-
-El texturizado y el relieve son procedurales: los normal maps se generan desde campos de altura. No se usó Substance Painter ni se hizo un bake de high-poly a low-poly. La consigna propone Substance/Photoshop/Blender como opciones; este proyecto documenta el proceso real usado y no incluye un archivo `.blend` o `.spp`. El formato de entrega solicitado, GLB, sí está incluido.
-
-## Publicación pendiente
-
-Los ZIP actuales incluyen `vercel.json` y la carpeta estática `dist`. No se ha creado un despliegue de estas versiones. La versión antigua de Alba que se publicó inicialmente con acceso privado no representa los rediseños ni los UV corregidos y no debe usarse como enlace de la entrega final. Para cerrar el punto 6 falta publicar las versiones actuales en Vercel y compartir enlaces accesibles para quien las revise.
+El texturizado y el relieve son procedurales: los normal maps se generan desde campos de altura. No se usó Substance Painter ni se hizo un bake de high-poly a low-poly. El formato de entrega solicitado, GLB, está incluido junto con el generador editable, los mapas y la memoria técnica.
 
 ## Archivos de verificación
 
-En cada proyecto:
+Dentro de `projects/alba/`:
 
-- `source/revision-requisitos.json`: auditoría de materiales, UV, resoluciones y pruebas de controles.
-- `source/validation-gltf.json`: informe Khronos de los GLB actuales.
+- `source/revision-requisitos.json`: auditoría de materiales, UV, resoluciones y controles.
+- `source/validation-gltf.json`: informe Khronos del GLB actual.
 - `source/uv-layout.png`: distribución UV.
-- `dist/assets/model-stats.json`: estadísticas y hash SHA-256 del GLB.
+- `dist/assets/model-stats.json`: estadísticas y SHA-256 del GLB.
 - `source/textures/`: mapas editables.
+
+## Página y publicación
+
+La página abre directamente el Escudo del Alba y conserva sus tres controles de materiales, las vistas del frente y reverso, el giro y la restauración. El build de la raíz copia únicamente este proyecto a `dist/`. La publicación web en Vercel sigue pendiente; subir el repositorio a GitHub no completa por sí solo ese requisito.
 
 ## Documentación oficial consultada
 
 - [Google model-viewer](https://modelviewer.dev/).
 - [API y ejemplos de materiales](https://modelviewer.dev/examples/scenegraph/).
 
-## Pruebas de apariencia
+## Prueba de apariencia
 
-Los cambios de madera, acero y bronce son combinables. Se revisaron también el reverso y la restauración de materiales.
+Los cambios de madera, acero y bronce son combinables.
 
 ![Alba con nogal, acero pavonado y bronce sin normal map](evidencia/alba-prueba-requisitos.png)
-
-![Bruma con fresno natural, acero pavonado y bronce sin normal map](evidencia/bruma-prueba-requisitos.png)
